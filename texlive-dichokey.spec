@@ -1,3 +1,9 @@
+# revision 17192
+# category Package
+# catalog-ctan /macros/latex/contrib/dichokey
+# catalog-date 2010-02-23 23:30:05 +0100
+# catalog-license pd
+# catalog-version undef
 Name:		texlive-dichokey
 Version:	20100223
 Release:	1
@@ -43,6 +49,7 @@ demonstrates usage.
 %doc %{_texmfdistdir}/doc/latex/dichokey/dichokey.tex
 %doc %{_texmfdistdir}/doc/latex/dichokey/rhodocyb.pdf
 %doc %{_texmfdistdir}/doc/latex/dichokey/rhodocyb.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -53,3 +60,5 @@ demonstrates usage.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
