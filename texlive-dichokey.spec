@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-dichokey
 Version:	20100223
-Release:	5
+Release:	6
 Summary:	Construct dichotomous identification keys
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/dichokey
