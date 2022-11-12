@@ -1,18 +1,12 @@
-# revision 17192
-# category Package
-# catalog-ctan /macros/latex/contrib/dichokey
-# catalog-date 2010-02-23 23:30:05 +0100
-# catalog-license pd
-# catalog-version undef
 Name:		texlive-dichokey
-Version:	20190228
+Version:	17192
 Release:	1
 Summary:	Construct dichotomous identification keys
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/dichokey
 License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dichokey.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dichokey.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dichokey.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dichokey.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ steps automatically. An example file is provided, which
 demonstrates usage.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -43,24 +37,10 @@ demonstrates usage.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20100223-2
-+ Revision: 750955
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20100223-1
-+ Revision: 718228
-- texlive-dichokey
-- texlive-dichokey
-- texlive-dichokey
-- texlive-dichokey
-
