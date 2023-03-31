@@ -1,6 +1,6 @@
 Name:		texlive-dichokey
 Version:	17192
-Release:	1
+Release:	2
 Summary:	Construct dichotomous identification keys
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/dichokey
